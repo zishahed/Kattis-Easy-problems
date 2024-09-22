@@ -5,13 +5,7 @@ void solve()
 {
     string s;
     getline(cin, s);
-    for (int i = 0; i < s.size(); i++)
-    {
-        if (isspace(s[i]))
-        {
-            s.erase(i + 1);
-        }
-    }
+    s.erase(remove(s.begin(), s.end(), ' '), s.end());
     cout << s << endl;
 }
 int main()
