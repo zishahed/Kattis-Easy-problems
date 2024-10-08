@@ -7,9 +7,21 @@ using namespace std;
 #define pb push_back
 void solve()
 {
-    ll n, k, d;
+    ll n, k, d, ct = 0;
     cin >> n >> k >> d;
-    
+    vector<ll> vec;
+    for (int i = 0; i < n; i++)
+    {
+        ll e;
+        cin >> e;
+        vec.pb(e + 14);
+    }
+    for (auto i : vec)
+    {
+        if (i <= (k + d))
+            ct++;
+    }
+    cout << ct << endl;
 }
 int main()
 {
