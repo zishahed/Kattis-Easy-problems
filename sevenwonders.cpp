@@ -9,7 +9,7 @@ void solve()
 {
     string s;
     cin >> s;
-    ll t, c, g;
+    ll t = 0, c = 0, g = 0;
     for (auto i : s)
     {
         if (i == 'T')
@@ -19,7 +19,16 @@ void solve()
         else if (i == 'G')
             g++;
     }
-    
+    ll sum = t * t + c * c + g * g;
+    if (t && c && g)
+    {
+        if (t == c && c == g)
+            cout << sum + t * 7 << endl;
+        else
+            cout << sum + min(t, min(c, g)) * 7 << endl;
+    }
+    else
+        cout << sum << endl;
 }
 int main()
 {
